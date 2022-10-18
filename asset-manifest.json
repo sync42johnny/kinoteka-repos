@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/kinoteka-repos/static/css/main.2b6ea97e.css",
-    "main.js": "/kinoteka-repos/static/js/main.b030aae5.js",
+    "main.css": "/kinoteka-repos/static/css/main.063b264a.css",
+    "main.js": "/kinoteka-repos/static/js/main.54223d7f.js",
     "static/js/787.bd605de1.chunk.js": "/kinoteka-repos/static/js/787.bd605de1.chunk.js",
-    "static/media/logo.svg": "/kinoteka-repos/static/media/logo.b2e5a01e505f739f1484b881277d5186.svg",
     "index.html": "/kinoteka-repos/index.html",
-    "main.2b6ea97e.css.map": "/kinoteka-repos/static/css/main.2b6ea97e.css.map",
-    "main.b030aae5.js.map": "/kinoteka-repos/static/js/main.b030aae5.js.map",
+    "main.063b264a.css.map": "/kinoteka-repos/static/css/main.063b264a.css.map",
+    "main.54223d7f.js.map": "/kinoteka-repos/static/js/main.54223d7f.js.map",
     "787.bd605de1.chunk.js.map": "/kinoteka-repos/static/js/787.bd605de1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b6ea97e.css",
-    "static/js/main.b030aae5.js"
+    "static/css/main.063b264a.css",
+    "static/js/main.54223d7f.js"
   ]
 }
