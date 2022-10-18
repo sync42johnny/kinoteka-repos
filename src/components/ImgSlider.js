@@ -17,13 +17,13 @@ function ImgSlider() {
   return (
     <Carousel {...settings}>
       <Wrap>
-        <img  src={path + "/images/man-holding-blue-laser-sword-poster-obi-wan-kenobi-star-wars.jpg"} />
+        <img  src={path + "/images/thumbnail-bg.png"} />
       </Wrap>
       <Wrap>
-        <img  src={path + "/images/man-holding-blue-laser-sword-poster-obi-wan-kenobi-star-wars.jpg"} />
+        <img  src={path + "/images/thumbnail-bg.png"} />
       </Wrap>
       <Wrap>
-        <img  src={path + "/images/man-holding-blue-laser-sword-poster-obi-wan-kenobi-star-wars.jpg"} />
+        <img  src={path + "/images/thumbnail-bg.png"} />
       </Wrap>
     </Carousel>
   );
