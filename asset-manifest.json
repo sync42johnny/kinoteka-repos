@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/kinoteka-repos/static/css/main.b0028b7e.css",
-    "main.js": "/kinoteka-repos/static/js/main.3388a070.js",
+    "main.css": "/kinoteka-repos/static/css/main.438d9007.css",
+    "main.js": "/kinoteka-repos/static/js/main.432d9f0d.js",
     "static/js/787.bd605de1.chunk.js": "/kinoteka-repos/static/js/787.bd605de1.chunk.js",
+    "static/media/slick.svg": "/kinoteka-repos/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/kinoteka-repos/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/kinoteka-repos/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/kinoteka-repos/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/kinoteka-repos/index.html",
-    "main.b0028b7e.css.map": "/kinoteka-repos/static/css/main.b0028b7e.css.map",
-    "main.3388a070.js.map": "/kinoteka-repos/static/js/main.3388a070.js.map",
+    "main.438d9007.css.map": "/kinoteka-repos/static/css/main.438d9007.css.map",
+    "main.432d9f0d.js.map": "/kinoteka-repos/static/js/main.432d9f0d.js.map",
     "787.bd605de1.chunk.js.map": "/kinoteka-repos/static/js/787.bd605de1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0028b7e.css",
-    "static/js/main.3388a070.js"
+    "static/css/main.438d9007.css",
+    "static/js/main.432d9f0d.js"
   ]
 }
