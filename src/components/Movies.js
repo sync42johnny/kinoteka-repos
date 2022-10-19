@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 function Movies() {
   const path = process.env.PUBLIC_URL;
@@ -9,28 +10,40 @@ function Movies() {
       <h4>Recommended for You</h4>
       <Content>
         <Wrap>
-          <img src={thumbnail} />
+          <Link to="/detail/0">
+            <img src={thumbnail} />
+          </Link>
         </Wrap>
         <Wrap>
-          <img src={thumbnail} />
+          <Link to={`/detail`}>
+            <img src={thumbnail} />
+          </Link>
+        </Wrap><Wrap>
+          <Link to={`/detail`}>
+            <img src={thumbnail} />
+          </Link>
+        </Wrap><Wrap>
+          <Link to={`/detail`}>
+            <img src={thumbnail} />
+          </Link>
+        </Wrap><Wrap>
+          <Link to={`/detail`}>
+            <img src={thumbnail} />
+          </Link>
+        </Wrap><Wrap>
+          <Link to={`/detail`}>
+            <img src={thumbnail} />
+          </Link>
         </Wrap>
         <Wrap>
-          <img src={thumbnail} />
+          <Link to={`/detail`}>
+            <img src={thumbnail} />
+          </Link>
         </Wrap>
         <Wrap>
-          <img src={thumbnail} />
-        </Wrap>
-        <Wrap>
-          <img src={thumbnail} />
-        </Wrap>
-        <Wrap>
-          <img src={thumbnail} />
-        </Wrap>
-        <Wrap>
-          <img src={thumbnail} />
-        </Wrap>
-        <Wrap>
-          <img src={thumbnail} />
+          <Link to={`/detail`}>
+            <img src={thumbnail} />
+          </Link>
         </Wrap>
       </Content>
     </Container>
