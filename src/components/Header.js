@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 function Header() {
   const path = process.env.PUBLIC_URL;
@@ -7,10 +8,12 @@ function Header() {
     <Nav>
       <Logo src={path + "/images/kinoteka.svg"} />
       <NavMenu>
-        <a>
-          <img src={path + "/images/home-icon.svg"} />
-          <span>HOME</span>
-        </a>
+        <Link to="/">
+          <a>
+            <img src={path + "/images/home-icon.svg"} />
+            <span>HOME</span>
+          </a>
+        </Link>
         <a>
           <img src={path + "/images/search-icon.svg"} />
           <span>SEARCH</span>
@@ -27,6 +30,12 @@ function Header() {
           <img src={path + "/images/series-icon.svg"} />
           <span>SERIES</span>
         </a>
+        <Link to="/about">
+          <a>
+            <img src={path + "/images/about-us-icon.svg"} />
+            <span>ABOUT</span>
+          </a>
+        </Link>
       </NavMenu>
       <UserImg src={path + "/images/avatar.jpg"} />
     </Nav>
@@ -68,6 +77,7 @@ const NavMenu = styled.div`
       font-size: 13px;
       letter-spacing: 1.42px;
       position: relative;
+      margin-left: 11px;
 
       &:after {
         content: "";

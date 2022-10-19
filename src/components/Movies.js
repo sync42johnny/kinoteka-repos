@@ -15,33 +15,33 @@ function Movies() {
           </Link>
         </Wrap>
         <Wrap>
-          <Link to={`/detail`}>
+          <Link to={`/detail/0`}>
             <img src={thumbnail} />
           </Link>
         </Wrap><Wrap>
-          <Link to={`/detail`}>
+          <Link to={`/detail/0`}>
             <img src={thumbnail} />
           </Link>
         </Wrap><Wrap>
-          <Link to={`/detail`}>
+          <Link to={`/detail/0`}>
             <img src={thumbnail} />
           </Link>
         </Wrap><Wrap>
-          <Link to={`/detail`}>
+          <Link to={`/detail/0`}>
             <img src={thumbnail} />
           </Link>
         </Wrap><Wrap>
-          <Link to={`/detail`}>
+          <Link to={`/detail/0`}>
             <img src={thumbnail} />
           </Link>
         </Wrap>
         <Wrap>
-          <Link to={`/detail`}>
+          <Link to={`/detail/0`}>
             <img src={thumbnail} />
           </Link>
         </Wrap>
         <Wrap>
-          <Link to={`/detail`}>
+          <Link to={`/detail/0`}>
             <img src={thumbnail} />
           </Link>
         </Wrap>
