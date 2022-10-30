@@ -1,29 +1,29 @@
 import React from "react";
-import { Counter } from "./features/counter/Counter";
-import "./App.css";
-import Home from "./pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
-import Header from "./components/Header";
-import Detail from "./components/Detail";
-import About from "./components/About";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import MoviePage from "./pages/Movies";
 import Signup from "./pages/Signup";
+import TVShows from "./pages/TVShows";
+import UserListedMovies from "./pages/UserListedMovies";
+import Home from "./pages/Home";
+import Header from "./components/Header";
+import About from "./pages/About";
+import Details from "./components/Details";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Router>
-        <Header />
-        <Routes>
-          <Route path="/detail/:id" element={<Detail />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route exact path="/details" element={<Details />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/signup" element={<Signup />} />
+        <Route exact path="/tv" element={<TVShows />} />
+        <Route exact path="/movies" element={<MoviePage />} />
+        <Route exact path="/mylist" element={<UserListedMovies />} />
+        <Route exact path="/" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

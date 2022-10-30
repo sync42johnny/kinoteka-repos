@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-
 //import { onAuthStateChanged } from "firebase/auth";
 //import { firebaseAuth } from "../utils/firebase-config";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchMovies, getGenres } from "../store";
-import ImgSlider from "../components/ImgSlider";
-import Movies from "../components/Movies";
+import SelectGenre from "../components/SelectGenre";
+import NotAvailable from "../components/NotAvailable";
 
-function Home() {
+function MoviePage() {
   const movies = useSelector((state) => state.netflix.movies);
   const genres = useSelector((state) => state.netflix.genres);
   const genresLoaded = useSelector((state) => state.netflix.genresLoaded);
@@ -23,41 +22,23 @@ function Home() {
 
   useEffect(() => {
     if (genresLoaded) {
-      dispatch(fetchMovies({ genres, type: "all" }));
+      dispatch(fetchMovies({ genres, type: "movie" }));
     }
   }, [genresLoaded]);
 
+  const [user, setUser] = useState(undefined);
+
   /* onAuthStateChanged(firebaseAuth, (currentUser) => {
-    if (!currentUser) navigate("/login");
+    if (currentUser) setUser(currentUser.uid);
+    else navigate("/login");
   }); */
 
   return (
     <Container>
-      <ImgSlider />
-      <Movies movies={movies} />
     </Container>
   );
 }
 
-export default Home;
-
-const path = process.env.PUBLIC_URL;
-
-const Container = styled.main`
-  min-height: calc(100vh - 70px);
-  padding: 0 calc(3.5vw + 5px);
-  position: relative;
-  overflow-x: hidden;
-
-  &:before {
-    background: url(${path + "/images/home-background.png"}) center center /
-      cover no-repeat fixed;
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  }
+const Container = styled.div`
 `;
+export default MoviePage;

@@ -1,20 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import background from "../assets/login.jpg";
 
-function BackgroundImage() {
-  const path = process.env.PUBLIC_URL;
-
+export default function BackgroundImage() {
   return (
     <Container>
-      <img
-        src={path + "/images/brian-mcgowan-ggg_B1MeqQk-unsplash.jpg"}
-        alt="background"
-      />
+      <img src={background} alt="background" />
     </Container>
   );
 }
-
-export default BackgroundImage;
 
 const Container = styled.div`
   height: 100vh;
@@ -22,6 +16,5 @@ const Container = styled.div`
   img {
     height: 100vh;
     width: 100vw;
-    object-fit: cover;
   }
 `;

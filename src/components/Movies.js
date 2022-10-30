@@ -2,49 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-function Movies() {
+function Movies({ movies }) {
   const path = process.env.PUBLIC_URL;
   const thumbnail = `${path}/images/thumbnail.jpg`;
+
+  const getMoviesFromRange = (from, to) => {
+    return movies.slice(from, to);
+  };
+
   return (
     <Container>
       <h4>Recommended for You</h4>
       <Content>
-        <Wrap>
-          <Link to="/detail/0">
-            <img src={thumbnail} />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to={`/detail/0`}>
-            <img src={thumbnail} />
-          </Link>
-        </Wrap><Wrap>
-          <Link to={`/detail/0`}>
-            <img src={thumbnail} />
-          </Link>
-        </Wrap><Wrap>
-          <Link to={`/detail/0`}>
-            <img src={thumbnail} />
-          </Link>
-        </Wrap><Wrap>
-          <Link to={`/detail/0`}>
-            <img src={thumbnail} />
-          </Link>
-        </Wrap><Wrap>
-          <Link to={`/detail/0`}>
-            <img src={thumbnail} />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to={`/detail/0`}>
-            <img src={thumbnail} />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to={`/detail/0`}>
-            <img src={thumbnail} />
-          </Link>
-        </Wrap>
+        {getMoviesFromRange(0, 8).map((movie, index) => {
+          return (
+            <Wrap key={index}>
+              <Link to={`/details`}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${movie.image}`}
+                  alt={movie.name}
+                />
+              </Link>
+            </Wrap>
+          );
+        })}
       </Content>
     </Container>
   );

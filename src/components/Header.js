@@ -1,6 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
 
 function Header(props) {
@@ -10,7 +9,11 @@ function Header(props) {
   const links = [
     { name: "HOME", link: "/", icon: "/images/home-icon.svg" },
     { name: "SEARCH", link: "/search", icon: "/images/search-icon.svg" },
-    { name: "WATCHLIST", link: "/watchlist", icon: "/images/watchlist-icon.svg", },
+    {
+      name: "WATCHLIST",
+      link: "/watchlist",
+      icon: "/images/watchlist-icon.svg",
+    },
     { name: "MOVIE", link: "/movie", icon: "/images/movie-icon.svg" },
     { name: "SERIES", link: "/series", icon: "/images/series-icon.svg" },
     { name: "ABOUT", link: "/about", icon: "/images/about-us-icon.svg" },
@@ -27,12 +30,12 @@ function Header(props) {
           <NavMenu>
             {links.map((item, idx) => {
               return (
-                  <Link key={idx} to={item.link}>
-                    <a>
-                      <img src={path + item.icon} />
-                      <span>{item.name}</span>
-                    </a>
-                  </Link>
+                <Link key={idx} to={item.link}>
+                  <a>
+                    <img src={path + item.icon} />
+                    <span>{item.name}</span>
+                  </a>
+                </Link>
               );
             })}
           </NavMenu>
