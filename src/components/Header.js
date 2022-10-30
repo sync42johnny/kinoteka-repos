@@ -1,43 +1,44 @@
 import React from "react";
-import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-function Header() {
+function Header(props) {
   const path = process.env.PUBLIC_URL;
+  const navigate = useNavigate();
+  const userName = true;
+  const links = [
+    { name: "HOME", link: "/", icon: "/images/home-icon.svg" },
+    { name: "SEARCH", link: "/search", icon: "/images/search-icon.svg" },
+    { name: "WATCHLIST", link: "/watchlist", icon: "/images/watchlist-icon.svg", },
+    { name: "MOVIE", link: "/movie", icon: "/images/movie-icon.svg" },
+    { name: "SERIES", link: "/series", icon: "/images/series-icon.svg" },
+    { name: "ABOUT", link: "/about", icon: "/images/about-us-icon.svg" },
+  ];
   return (
     <Nav>
       <Logo src={path + "/images/kinoteka.svg"} />
-      <NavMenu>
-        <Link to="/">
-          <a>
-            <img src={path + "/images/home-icon.svg"} />
-            <span>HOME</span>
-          </a>
-        </Link>
-        <a>
-          <img src={path + "/images/search-icon.svg"} />
-          <span>SEARCH</span>
-        </a>
-        <a>
-          <img src={path + "/images/watchlist-icon.svg"} />
-          <span>WATCHLIST</span>
-        </a>
-        <a>
-          <img src={path + "/images/movie-icon.svg"} />
-          <span>MOVIE</span>
-        </a>
-        <a>
-          <img src={path + "/images/series-icon.svg"} />
-          <span>SERIES</span>
-        </a>
-        <Link to="/about">
-          <a>
-            <img src={path + "/images/about-us-icon.svg"} />
-            <span>ABOUT</span>
-          </a>
-        </Link>
-      </NavMenu>
-      <UserImg src={path + "/images/avatar.jpg"} />
+      {!userName ? (
+        <button onClick={() => navigate(props.login ? "/login" : "/signup")}>
+          {props.login ? "Log In" : "Sign In"}
+        </button>
+      ) : (
+        <>
+          <NavMenu>
+            {links.map((item, idx) => {
+              return (
+                  <Link key={idx} to={item.link}>
+                    <a>
+                      <img src={path + item.icon} />
+                      <span>{item.name}</span>
+                    </a>
+                  </Link>
+              );
+            })}
+          </NavMenu>
+          <UserImg src={path + "/images/avatar.jpg"} />
+        </>
+      )}
     </Nav>
   );
 }
@@ -48,13 +49,36 @@ const Nav = styled.nav`
   height: 70px;
   background: #090b13;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 0 36px;
   overflow-x: hidden;
+  z-index: 3;
+
+  button {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 16px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    vertical-align: middle;
+    display: inline-block;
+    border: 1px solid #f9f9f9;
+    transition: all 0.2s ease 0s;
+
+    &:hover {
+      background-color: #f9f9f9;
+      color: #000;
+      border-color: transparent;
+    }
+  }
 `;
 
 const Logo = styled.img`
   width: 80px;
+  display: inline-block;
 `;
 
 const NavMenu = styled.div`
