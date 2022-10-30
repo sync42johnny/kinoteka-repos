@@ -6,7 +6,7 @@ import styled from "styled-components";
 function Header(props) {
   const path = process.env.PUBLIC_URL;
   const navigate = useNavigate();
-  const userName = true;
+  const userName = false;
   const links = [
     { name: "HOME", link: "/", icon: "/images/home-icon.svg" },
     { name: "SEARCH", link: "/search", icon: "/images/search-icon.svg" },
