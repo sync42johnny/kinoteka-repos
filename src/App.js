@@ -8,14 +8,14 @@ import UserListedMovies from "./pages/UserListedMovies";
 import Home from "./pages/Home";
 import Header from "./components/Header";
 import About from "./pages/About";
-import Details from "./components/Details";
+import CardDetails from "./components/CardDetails";
+import Navbar from "./components/Navbar";
 
 export default function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
-        <Route exact path="/details" element={<Details />} />
+        <Route exact path="/carddetails/:id" element={<CardDetails />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
