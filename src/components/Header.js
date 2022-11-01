@@ -1,11 +1,14 @@
-import React from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import styled from "styled-components";
+import { firebaseAuth } from "../utils/firebase-config";
+
 
 function Header(props) {
+  const [userName, setUserName] = useState("")
   const path = process.env.PUBLIC_URL;
   const navigate = useNavigate();
-  const userName = true;
   const links = [
     { name: "HOME", link: "/", icon: "/images/home-icon.svg" },
     { name: "SEARCH", link: "/search", icon: "/images/search-icon.svg" },
@@ -18,30 +21,16 @@ function Header(props) {
     { name: "SERIES", link: "/series", icon: "/images/series-icon.svg" },
     { name: "ABOUT", link: "/about", icon: "/images/about-us-icon.svg" },
   ];
+
+  onAuthStateChanged(firebaseAuth, (currentUser) => {
+  })
+
   return (
     <Nav>
       <Logo src={path + "/images/kinoteka.svg"} />
-      {!userName ? (
         <button onClick={() => navigate(props.login ? "/login" : "/signup")}>
           {props.login ? "Log In" : "Sign In"}
         </button>
-      ) : (
-        <>
-          <NavMenu>
-            {links.map((item, idx) => {
-              return (
-                <Link key={idx} to={item.link}>
-                  <a>
-                    <img src={path + item.icon} />
-                    <span>{item.name}</span>
-                  </a>
-                </Link>
-              );
-            })}
-          </NavMenu>
-          <UserImg src={path + "/images/avatar.jpg"} />
-        </>
-      )}
     </Nav>
   );
 }
