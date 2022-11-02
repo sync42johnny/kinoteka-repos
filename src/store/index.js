@@ -101,16 +101,6 @@ export const removeMovieFromLiked = createAsyncThunk(
   }
 );
 
-export const fetchAsyncMoviesDetail = createAsyncThunk(
-  "netflix/fetchAsyncMoviesDetail",
-  async () => {
-    const response = await axios.get(`
-      https://api.themoviedb.org/3/movie/436270?api_key=${API_KEY}&language=en-US`);
-    console.log(response.data);
-    return response.data;
-  }
-);
-
 const NetflixSlice = createSlice({
   name: "Netflix",
   initialState,
@@ -130,9 +120,6 @@ const NetflixSlice = createSlice({
     });
     builder.addCase(removeMovieFromLiked.fulfilled, (state, action) => {
       state.movies = action.payload;
-    });
-    builder.addCase(fetchAsyncMoviesDetail.fulfilled, (state, action) => {
-      state.selectMovieOrShow = action.payload;
     });
   },
 });
