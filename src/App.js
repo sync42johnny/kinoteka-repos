@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
-import MoviePage from "./pages/Movies";
+import Movies from "./pages/Movies";
 import Signup from "./pages/Signup";
 import TVShows from "./pages/TVShows";
 import UserListedMovies from "./pages/UserListedMovies";
@@ -19,8 +19,8 @@ export default function App() {
         <Route exact path="/about" element={<About />} />
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
-        <Route exact path="/tv" element={<TVShows />} />
-        <Route exact path="/movies" element={<MoviePage />} />
+        <Route exact path="/series" element={<TVShows />} />
+        <Route exact path="/movies" element={<Movies />} />
         <Route exact path="/mylist" element={<UserListedMovies />} />
         <Route exact path="/" element={<Home />} />
       </Routes>
