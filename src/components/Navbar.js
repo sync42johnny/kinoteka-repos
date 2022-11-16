@@ -13,7 +13,7 @@ export default function Navbar({ isScrolled }) {
       link: "/watchlist",
       icon: "/images/watchlist-icon.svg",
     },
-    { name: "MOVIE", link: "/movie", icon: "/images/movie-icon.svg" },
+    { name: "MOVIE", link: "/movies", icon: "/images/movie-icon.svg" },
     { name: "SERIES", link: "/series", icon: "/images/series-icon.svg" },
     { name: "ABOUT", link: "/about", icon: "/images/about-us-icon.svg" },
   ];
