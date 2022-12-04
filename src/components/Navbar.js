@@ -7,10 +7,10 @@ export default function Navbar({ isScrolled }) {
   const path = process.env.PUBLIC_URL;
   const links = [
     { name: "HOME", link: "/", icon: "/images/home-icon.svg" },
-    { name: "SEARCH", link: "/search", icon: "/images/search-icon.svg" },
+    { name: "SEARCH", link: "/addmovie", icon: "/images/search-icon.svg" },
     {
       name: "WATCHLIST",
-      link: "/watchlist",
+      link: "/mylist",
       icon: "/images/watchlist-icon.svg",
     },
     { name: "MOVIE", link: "/movies", icon: "/images/movie-icon.svg" },
