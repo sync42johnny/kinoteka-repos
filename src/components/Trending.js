@@ -2,19 +2,25 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Card from "./Card";
 
-const Trending = ({ movies }) => {
+const Trending = ({ movies, title, type }) => {
   const getMoviesFromRange = (from, to) => {
     return movies.slice(from, to);
   };
   return (
     <Container>
-      <h4>Trending</h4>
+      <h4>{title ? title : "Trending"}</h4>
       <Content>
         {movies &&
           getMoviesFromRange(0, 16).map((movie, key) => {
-            return <Card key={movie.id} index={movie.id} movieData={movie} />
-          })
-        }
+            return (
+              <Card
+                key={movie.id}
+                index={movie.id}
+                movieData={movie}
+                type={type}
+              />
+            );
+          })}
       </Content>
     </Container>
   );
